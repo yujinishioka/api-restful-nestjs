@@ -59,7 +59,7 @@ $ yarn run test:cov
 ### 🔧 Requisitos Técnicos
 
 - [x] Repositório público no GitHub ou GitLab
-- [ ] Mínimo 1 commit por endpoint (mínimo de 3 commits)
+- [x] Mínimo 1 commit por endpoint (mínimo de 3 commits)
 - [x] Utilizar **yarn** ou **pnpm**
 - [ ] Dados armazenados em **memória** (sem banco de dados)
 - [ ] API aceita e responde apenas com **JSON**
@@ -67,7 +67,7 @@ $ yarn run test:cov
 - [ ] Tratamento de erros adequado com status HTTP corretos
 - [ ] Testes unitários e de integração com **Jest**
 - [ ] Projeto containerizável com **Docker**
-- [ ] Documentação da API com **Swagger**
+- [x] Documentação da API com **Swagger**
 - [ ] Logs estruturados com **Winston** ou **Pino**
 
 ---
@@ -131,11 +131,11 @@ $ yarn run test:cov
 
 ### 📘 Documentação
 
-- [ ] Documentação automática da API com **Swagger**
+- [x] Documentação automática da API com **Swagger**
 - [ ] README com:
-  - [ ] Instruções de instalação
+  - [x] Instruções de instalação
   - [ ] Execução com e sem Docker
-  - [ ] Como rodar os testes
+  - [x] Como rodar os testes
 
 ---
 
@@ -158,6 +158,6 @@ $ yarn run test:cov
 
 - [ ] Código limpo, testado e organizado
 - [ ] Repositório público com link de acesso
-- [ ] Documentação clara para execução e testes
+- [x] Documentação clara para execução e testes
 
 ---
