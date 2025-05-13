@@ -6,13 +6,35 @@
 
 > Este projeto implementa uma API RESTful com NestJS e segue todos os requisitos propostos no desafio técnico. Abaixo, está o checklist completo de conformidade com os critérios obrigatórios e diferenciais.
 
-## Dependências do projeto
+## Endpoints
+
+- `POST /transactions`: Cadastra uma transação.
+- `DELETE /transactions`: Remove todas as transações.
+- `GET /statistics`: Retorna estatísticas dos últimos 60 segundos.
+- `GET /health`: Endpoint de verificação.
+
+## Rotas da aplicação
+
+Nome | Rota
+-- | --
+API | http://localhost:3000
+Swagger | http://localhost:3000/api
+
+## Projeto com Docker
+
+```bash
+docker compose up --build
+```
+
+## Projeto sem Docker
+
+### Dependências do projeto
 
 ```bash
 $ yarn install
 ```
 
-## Rodando o projeto
+### Rodando o projeto
 
 ```bash
 # desenvolvedor
@@ -25,7 +47,7 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
-## Rodando testes
+### Rodando testes
 
 ```bash
 # testes unitários
