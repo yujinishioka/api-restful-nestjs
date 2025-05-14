@@ -49,6 +49,10 @@ export class TransactionController {
     summary: 'Apagar todas as transações',
     description: 'Esta rota apaga todas as transações registradas no momento.',
   })
+  @ApiResponse({
+    status: 200,
+    description: 'Todas as transações foram apagadas com sucesso.',
+  })
   async clear() {
     await this.clearTransactionsUseCase.execute();
     return { message: 'Todas as transações foram apagadas com sucesso.' };
@@ -58,6 +62,10 @@ export class TransactionController {
   @ApiOperation({
     summary: 'Obter estatísticas das transações',
     description: 'Retorna estatísticas das transações feitas no último minuto.',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Estatísticas retornadas com sucesso.',
   })
   getStatistics() {
     return this.getStatisticsUseCase.execute();

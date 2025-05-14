@@ -19,7 +19,6 @@ export class CreateTransactionUseCase {
   async execute(data: Transaction): Promise<void> {
     const timestamp = new Date(data.timestamp);
     const now = new Date();
-    console.log('timestamp', timestamp);
 
     if (data.amount < 0) {
       throw new UnprocessableEntityException('Valor negativo não é permitido.');
