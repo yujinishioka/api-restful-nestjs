@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Instalar dependências
+        run: yarn install
+
+      - name: Rodar Lint
+        run: yarn lint
+
+      - name: Rodar Testes
+        run: yarn test
+
+      - name: Rodar Testes e2e
+        run: yarn test:e2e

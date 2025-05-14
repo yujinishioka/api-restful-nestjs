@@ -10,7 +10,7 @@
 
 - `POST /transactions`: Cadastra uma transação.
 - `DELETE /transactions`: Remove todas as transações.
-- `GET /statistics`: Retorna estatísticas dos últimos 60 segundos.
+- `GET /transactions/statistics`: Retorna estatísticas dos últimos 60 segundos.
 - `GET /health`: Endpoint de verificação.
 
 ## Rotas da aplicação
@@ -19,6 +19,8 @@ Nome | Rota
 -- | --
 API | http://localhost:3000
 Swagger | http://localhost:3000/api
+Statistics | http://localhost:3000/transactions/statistics
+Health | http://localhost:3000/health
 
 ## Projeto com Docker
 
@@ -147,7 +149,7 @@ $ yarn test:cov
 ### 📜 Logs e Variáveis de Ambiente
 
 - [x] **Logs estruturados** com Winston ou Pino
-- [ ] Uso de **dotenv** para variáveis de ambiente
+- [x] Uso de **dotenv** para variáveis de ambiente
 
 ---
 
