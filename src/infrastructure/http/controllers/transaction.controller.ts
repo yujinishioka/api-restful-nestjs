@@ -1,4 +1,3 @@
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
   Body,
   Controller,
@@ -8,11 +7,13 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Throttle } from '@nestjs/throttler';
 import { CreateTransactionDto } from '../dtos/createTransaction.dto';
+import { MESSAGES } from 'src/common/messages';
 import { CreateTransactionUseCase } from 'src/usecases/createTransaction.usecase';
 import { ClearTransactionsUseCase } from 'src/usecases/clearTransactions.usecase';
 import { GetStatisticsUseCase } from 'src/usecases/getStatistics.usecase';
-import { MESSAGES } from 'src/common/messages';
 
 @ApiTags('transactions')
 @Controller('transactions')
@@ -23,6 +24,7 @@ export class TransactionController {
     private readonly getStatisticsUseCase: GetStatisticsUseCase,
   ) {}
 
+  @Throttle({ default: { limit: 10, ttl: 60000 } })
   @Post()
   @ApiOperation({
     summary: 'Criar uma nova transação',

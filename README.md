@@ -90,7 +90,7 @@ $ yarn test:cov
 - [x] Testes unitários e de integração com **Jest**
 - [ ] Projeto containerizável com **Docker**
 - [x] Documentação da API com **Swagger**
-- [ ] Logs estruturados com **Winston** ou **Pino**
+- [x] Logs estruturados com **Winston** ou **Pino**
 
 ---
 
@@ -124,14 +124,14 @@ $ yarn test:cov
 - [x] Resposta `200 OK`
 
 #### 🔹 GET /health
-- [ ] Endpoint de verificação de saúde da API
+- [x] Endpoint de verificação de saúde da API
 
 ---
 
 ### 🧪 Testes Automatizados
 
 - [x] Testes **unitários** com Jest
-- [ ] Testes **de integração** da API
+- [x] Testes **de integração** da API
 - [x] Uso de **mocks e stubs** para isolar dependências
 
 ---
@@ -139,14 +139,14 @@ $ yarn test:cov
 ### 🔐 Segurança
 
 - [x] Validação rigorosa com DTOs
-- [ ] **Rate Limiting** configurado
-- [ ] **Helmet.js** para proteção de headers
+- [x] **Rate Limiting** configurado
+- [x] **Helmet.js** para proteção de headers
 
 ---
 
 ### 📜 Logs e Variáveis de Ambiente
 
-- [ ] **Logs estruturados** com Winston ou Pino
+- [x] **Logs estruturados** com Winston ou Pino
 - [ ] Uso de **dotenv** para variáveis de ambiente
 
 ---
