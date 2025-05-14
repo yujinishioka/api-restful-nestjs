@@ -4,15 +4,24 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-> Este projeto implementa uma API RESTful com NestJS e segue todos os requisitos propostos no desafio técnico. Abaixo, está o checklist completo de conformidade com os critérios obrigatórios e diferenciais.
+> Este projeto implementa uma API RESTful com NestJS para armazenamento de transações com valores numéricos (amount) e data do cadastro (timestamp), seguindo todos os requisitos propostos no desafio técnico. Abaixo, está a documentação com instalação e o checklist completo de conformidade com os critérios propostos.
 
 ## Endpoints
 
 - `POST /transactions`: Cadastra uma transação.
 - `DELETE /transactions`: Remove todas as transações.
 - `GET /transactions/statistics`: Retorna estatísticas dos últimos 60 segundos.
-- `GET /health`: Endpoint de verificação.
+- `GET /health`: Endpoint de verificação de saúde da aplicação.
 - `GET /metrics`: Endpoint de métricas realizado pelo Prometheus.
+
+### Exemplo de entrada de dados para o POST /transactions:
+
+```
+{
+  "amount": 150.0,
+  "timestamp": "2025-05-13T21:00:00Z"
+}
+```
 
 ## Rotas da aplicação
 
@@ -92,7 +101,7 @@ $ yarn test:cov
 - [x] Endpoints RESTful
 - [x] Tratamento de erros adequado com status HTTP corretos
 - [x] Testes unitários e de integração com **Jest**
-- [ ] Projeto containerizável com **Docker**
+- [x] Projeto containerizável com **Docker**
 - [x] Documentação da API com **Swagger**
 - [x] Logs estruturados com **Winston** ou **Pino**
 
@@ -167,8 +176,8 @@ $ yarn test:cov
 
 ### 🐳 Docker e Containerização
 
-- [ ] `Dockerfile` funcional
-- [ ] `docker-compose.yml` configurado
+- [x] `Dockerfile` funcional
+- [x] `docker-compose.yml` configurado
 
 ---
 

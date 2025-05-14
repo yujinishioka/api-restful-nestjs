@@ -1,0 +1,46 @@
+# Evita que dependências sejam copiadas para o container
+node_modules
+dist
+
+# Logs e arquivos temporários
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+*.log
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações e ambientes de desenvolvimento
+.env.*
+
+# Docker e infraestrutura
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose.*.yml
+
+# Git e controle de versão
+.git
+.gitignore
+.github
+
+# IDEs e editores
+.vscode
+.idea
+
+# Testes e coverage
+coverage
+jest.config.js
+jest.config.ts
+test
+__tests__
+
+# Arquivos de build e caches
+build
+.cache
+.next
+out
+.tmp
