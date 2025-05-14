@@ -3,6 +3,7 @@ import {
   Injectable,
   UnprocessableEntityException,
 } from '@nestjs/common';
+import { MESSAGES } from 'src/common/messages';
 import { Transaction } from 'src/domain/entities/transaction.entity';
 import {
   TRANSACTION_REPOSITORY,
@@ -21,7 +22,7 @@ export class CreateTransactionUseCase {
     const now = new Date();
 
     if (data.amount < 0) {
-      throw new UnprocessableEntityException('Valor negativo não é permitido.');
+      throw new UnprocessableEntityException(MESSAGES.NEGATIVE_AMOUNT);
     }
 
     if (isNaN(timestamp.getTime())) {

@@ -12,6 +12,7 @@ import { CreateTransactionDto } from '../dtos/createTransaction.dto';
 import { CreateTransactionUseCase } from 'src/usecases/createTransaction.usecase';
 import { ClearTransactionsUseCase } from 'src/usecases/clearTransactions.usecase';
 import { GetStatisticsUseCase } from 'src/usecases/getStatistics.usecase';
+import { MESSAGES } from 'src/common/messages';
 
 @ApiTags('transactions')
 @Controller('transactions')
@@ -28,7 +29,7 @@ export class TransactionController {
     description:
       'Esta rota cria uma nova transação, armazenando o valor e a data.',
   })
-  @ApiResponse({ status: 201, description: 'Transação aceita e registrada.' })
+  @ApiResponse({ status: 201, description: MESSAGES.TRANSACTION_ACCEPTED })
   @ApiResponse({
     status: 422,
     description: 'Transação rejeitada por violar alguma regra de negócio.',
@@ -41,7 +42,7 @@ export class TransactionController {
       timestamp: new Date(dto.timestamp),
     };
     await this.createTransactionUseCase.execute(transaction);
-    return { message: 'Transação aceita e registrada.' };
+    return { message: MESSAGES.TRANSACTION_ACCEPTED };
   }
 
   @Delete('clear')
@@ -51,11 +52,11 @@ export class TransactionController {
   })
   @ApiResponse({
     status: 200,
-    description: 'Todas as transações foram apagadas com sucesso.',
+    description: MESSAGES.TRANSACTIONS_CLEARED,
   })
   async clear() {
     await this.clearTransactionsUseCase.execute();
-    return { message: 'Todas as transações foram apagadas com sucesso.' };
+    return { message: MESSAGES.TRANSACTIONS_CLEARED };
   }
 
   @Get('/statistics')

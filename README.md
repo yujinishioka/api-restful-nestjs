@@ -38,26 +38,26 @@ $ yarn install
 
 ```bash
 # desenvolvedor
-$ yarn run start
+$ yarn start
 
 # modo watch
-$ yarn run start:dev
+$ yarn start:dev
 
 # modo produção
-$ yarn run start:prod
+$ yarn start:prod
 ```
 
 ### Rodando testes
 
 ```bash
 # testes unitários
-$ yarn run test
+$ yarn test
 
 # testes e2e
-$ yarn run test:e2e
+$ yarn test:e2e
 
 # teste de cobertura
-$ yarn run test:cov
+$ yarn test:cov
 ```
 
 ## ✅ Checklist do Desafio
