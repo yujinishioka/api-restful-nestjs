@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { WinstonModule } from 'nest-winston';
@@ -15,7 +16,9 @@ import { GetStatisticsUseCase } from './usecases/getStatistics.usecase';
 
 @Module({
   imports: [
-    WinstonModule.forRoot(WinstonLoggerConfig),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     ThrottlerModule.forRoot({
       throttlers: [
         {
@@ -24,6 +27,7 @@ import { GetStatisticsUseCase } from './usecases/getStatistics.usecase';
         },
       ],
     }),
+    WinstonModule.forRoot(WinstonLoggerConfig),
   ],
   controllers: [AppController, TransactionController, HealthController],
   providers: [
