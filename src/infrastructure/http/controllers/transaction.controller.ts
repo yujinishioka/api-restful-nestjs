@@ -1,10 +1,19 @@
-import { ApiOperation } from '@nestjs/swagger';
-import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Post,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { CreateTransactionDto } from '../dtos/createTransaction.dto';
 import { CreateTransactionUseCase } from 'src/usecases/createTransaction.usecase';
 import { ClearTransactionsUseCase } from 'src/usecases/clearTransactions.usecase';
 import { GetStatisticsUseCase } from 'src/usecases/getStatistics.usecase';
 
+@ApiTags('transactions')
 @Controller('transactions')
 export class TransactionController {
   constructor(
@@ -19,8 +28,19 @@ export class TransactionController {
     description:
       'Esta rota cria uma nova transação, armazenando o valor e a data.',
   })
+  @ApiResponse({ status: 201, description: 'Transação aceita e registrada.' })
+  @ApiResponse({
+    status: 422,
+    description: 'Transação rejeitada por violar alguma regra de negócio.',
+  })
+  @ApiResponse({ status: 400, description: 'JSON malformado.' })
+  @UsePipes(new ValidationPipe({ whitelist: true }))
   async create(@Body() dto: CreateTransactionDto) {
-    await this.createTransactionUseCase.execute(dto);
+    const transaction = {
+      amount: dto.amount,
+      timestamp: new Date(dto.timestamp),
+    };
+    await this.createTransactionUseCase.execute(transaction);
     return { message: 'Transação aceita e registrada.' };
   }
 

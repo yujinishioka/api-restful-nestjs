@@ -65,16 +65,16 @@ $ yarn run test:cov
 ### 📁 Estrutura do Projeto
 
 - [x] Utilizar **NestJS com TypeScript**
-- [ ] Seguir a **Clean Architecture**
-  - [ ] Controllers
-  - [ ] Use Cases
-  - [ ] Entities
-  - [ ] Repositories
-  - [ ] Interfaces
-- [ ] Usar **Inversão de Dependência (DI)**
-- [ ] Criar interfaces e DTOs para tipagem e validação
-- [ ] Aplicar princípios **SOLID**
-- [ ] Utilizar boas práticas de **Clean Code**
+- [x] Seguir a **Clean Architecture**
+  - [x] Controllers
+  - [x] Use Cases
+  - [x] Entities
+  - [x] Repositories
+  - [x] Interfaces
+- [x] Usar **Inversão de Dependência (DI)**
+- [x] Criar interfaces e DTOs para tipagem e validação
+- [x] Aplicar princípios **SOLID**
+- [x] Utilizar boas práticas de **Clean Code**
 
 ---
 
@@ -83,9 +83,9 @@ $ yarn run test:cov
 - [x] Repositório público no GitHub ou GitLab
 - [x] Mínimo 1 commit por endpoint (mínimo de 3 commits)
 - [x] Utilizar **yarn** ou **pnpm**
-- [ ] Dados armazenados em **memória** (sem banco de dados)
-- [ ] API aceita e responde apenas com **JSON**
-- [ ] Endpoints RESTful
+- [x] Dados armazenados em **memória** (sem banco de dados)
+- [x] API aceita e responde apenas com **JSON**
+- [x] Endpoints RESTful
 - [ ] Tratamento de erros adequado com status HTTP corretos
 - [ ] Testes unitários e de integração com **Jest**
 - [ ] Projeto containerizável com **Docker**
@@ -97,31 +97,31 @@ $ yarn run test:cov
 ### 🔌 Endpoints da API
 
 #### 🔹 POST /transactions
-- [ ] Receber `amount` (≥ 0)
-- [ ] Receber `timestamp` (formato ISO 8601, UTC)
+- [x] Receber `amount` (≥ 0)
+- [x] Receber `timestamp` (formato ISO 8601, UTC)
 - [ ] Regras de negócio:
   - [ ] Transação **não pode estar no futuro**
   - [ ] Timestamp deve ser no presente ou passado
   - [ ] `amount` **não pode ser negativo**
 - [ ] Respostas:
-  - [ ] `201 Created`
+  - [x] `201 Created`
   - [ ] `422 Unprocessable Entity`
   - [ ] `400 Bad Request`
 
 #### 🔹 DELETE /transactions
-- [ ] Remove todas as transações
-- [ ] Retorna `200 OK`
+- [x] Remove todas as transações
+- [x] Retorna `200 OK`
 
 #### 🔹 GET /statistics
-- [ ] Considera apenas transações dos **últimos 60 segundos**
-- [ ] Campos obrigatórios:
-  - [ ] `count`
-  - [ ] `sum`
-  - [ ] `avg`
-  - [ ] `min`
-  - [ ] `max`
-- [ ] Retorna `0` para todos os campos se não houver transações
-- [ ] Resposta `200 OK`
+- [x] Considera apenas transações dos **últimos 60 segundos**
+- [x] Campos obrigatórios:
+  - [x] `count`
+  - [x] `sum`
+  - [x] `avg`
+  - [x] `min`
+  - [x] `max`
+- [x] Retorna `0` para todos os campos se não houver transações
+- [x] Resposta `200 OK`
 
 #### 🔹 GET /health
 - [ ] Endpoint de verificação de saúde da API
@@ -138,7 +138,7 @@ $ yarn run test:cov
 
 ### 🔐 Segurança
 
-- [ ] Validação rigorosa com DTOs
+- [x] Validação rigorosa com DTOs
 - [ ] **Rate Limiting** configurado
 - [ ] **Helmet.js** para proteção de headers
 
@@ -154,9 +154,9 @@ $ yarn run test:cov
 ### 📘 Documentação
 
 - [x] Documentação automática da API com **Swagger**
-- [ ] README com:
+- [x] README com:
   - [x] Instruções de instalação
-  - [ ] Execução com e sem Docker
+  - [x] Execução com e sem Docker
   - [x] Como rodar os testes
 
 ---
@@ -178,8 +178,8 @@ $ yarn run test:cov
 
 ### 📬 Entrega
 
-- [ ] Código limpo, testado e organizado
-- [ ] Repositório público com link de acesso
+- [x] Código limpo, testado e organizado
+- [x] Repositório público com link de acesso
 - [x] Documentação clara para execução e testes
 
 ---

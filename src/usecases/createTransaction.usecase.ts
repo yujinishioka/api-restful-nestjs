@@ -1,4 +1,8 @@
-import { Inject, Injectable } from '@nestjs/common';
+import {
+  Inject,
+  Injectable,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 import { Transaction } from 'src/domain/entities/transaction.entity';
 import {
   TRANSACTION_REPOSITORY,
@@ -13,10 +17,27 @@ export class CreateTransactionUseCase {
   ) {}
 
   async execute(data: Transaction): Promise<void> {
-    const transaction: Transaction = {
-      amount: data.amount,
-      timestamp: new Date(),
-    };
-    await this.transactionRepository.save(transaction);
+    const timestamp = new Date(data.timestamp);
+    const now = new Date();
+    console.log('timestamp', timestamp);
+
+    if (data.amount < 0) {
+      throw new UnprocessableEntityException('Valor negativo não é permitido.');
+    }
+
+    if (isNaN(timestamp.getTime())) {
+      throw new UnprocessableEntityException('Data inválida.');
+    }
+
+    if (timestamp > now) {
+      throw new UnprocessableEntityException(
+        'Transações futuras não são permitidas.',
+      );
+    }
+
+    await this.transactionRepository.save({
+      ...data,
+      timestamp,
+    });
   }
 }
