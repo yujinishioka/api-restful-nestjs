@@ -13,6 +13,8 @@ import { WinstonLoggerConfig } from './logger/winston.logger';
 import { CreateTransactionUseCase } from './usecases/createTransaction.usecase';
 import { ClearTransactionsUseCase } from './usecases/clearTransactions.usecase';
 import { GetStatisticsUseCase } from './usecases/getStatistics.usecase';
+import { MetricsController } from './metrics/metrics.controller';
+import { MetricsService } from './metrics/metrics.service';
 
 @Module({
   imports: [
@@ -29,11 +31,17 @@ import { GetStatisticsUseCase } from './usecases/getStatistics.usecase';
     }),
     WinstonModule.forRoot(WinstonLoggerConfig),
   ],
-  controllers: [AppController, TransactionController, HealthController],
+  controllers: [
+    AppController,
+    MetricsController,
+    TransactionController,
+    HealthController,
+  ],
   providers: [
     CreateTransactionUseCase,
     ClearTransactionsUseCase,
     GetStatisticsUseCase,
+    MetricsService,
     {
       provide: TRANSACTION_REPOSITORY,
       useClass: InMemoryTransactionRepository,

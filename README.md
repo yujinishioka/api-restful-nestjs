@@ -12,6 +12,7 @@
 - `DELETE /transactions`: Remove todas as transações.
 - `GET /transactions/statistics`: Retorna estatísticas dos últimos 60 segundos.
 - `GET /health`: Endpoint de verificação.
+- `GET /metrics`: Endpoint de métricas realizado pelo Prometheus.
 
 ## Rotas da aplicação
 
@@ -21,6 +22,7 @@ API | http://localhost:3000
 Swagger | http://localhost:3000/api
 Statistics | http://localhost:3000/transactions/statistics
 Health | http://localhost:3000/health
+Metrics (Prometheus) | http://localhost:3000/metrics
 
 ## Projeto com Docker
 
@@ -172,9 +174,9 @@ $ yarn test:cov
 
 ### 🌟 Diferenciais (opcionais)
 
-- [ ] CI/CD com GitHub Actions ou GitLab CI
-- [ ] Métricas com Prometheus e Grafana
-- [ ] Atualizações em tempo real com WebSockets
+- [x] CI/CD com GitHub Actions ou GitLab CI
+- [x] Métricas com Prometheus e Grafana
+- [x] Atualizações em tempo real com WebSockets
 
 ---
 
