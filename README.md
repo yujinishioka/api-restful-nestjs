@@ -86,8 +86,8 @@ $ yarn test:cov
 - [x] Dados armazenados em **memória** (sem banco de dados)
 - [x] API aceita e responde apenas com **JSON**
 - [x] Endpoints RESTful
-- [ ] Tratamento de erros adequado com status HTTP corretos
-- [ ] Testes unitários e de integração com **Jest**
+- [x] Tratamento de erros adequado com status HTTP corretos
+- [x] Testes unitários e de integração com **Jest**
 - [ ] Projeto containerizável com **Docker**
 - [x] Documentação da API com **Swagger**
 - [ ] Logs estruturados com **Winston** ou **Pino**
@@ -99,14 +99,14 @@ $ yarn test:cov
 #### 🔹 POST /transactions
 - [x] Receber `amount` (≥ 0)
 - [x] Receber `timestamp` (formato ISO 8601, UTC)
-- [ ] Regras de negócio:
-  - [ ] Transação **não pode estar no futuro**
-  - [ ] Timestamp deve ser no presente ou passado
-  - [ ] `amount` **não pode ser negativo**
-- [ ] Respostas:
+- [x] Regras de negócio:
+  - [x] Transação **não pode estar no futuro**
+  - [x] Timestamp deve ser no presente ou passado
+  - [x] `amount` **não pode ser negativo**
+- [x] Respostas:
   - [x] `201 Created`
-  - [ ] `422 Unprocessable Entity`
-  - [ ] `400 Bad Request`
+  - [x] `422 Unprocessable Entity`
+  - [x] `400 Bad Request`
 
 #### 🔹 DELETE /transactions
 - [x] Remove todas as transações
@@ -130,9 +130,9 @@ $ yarn test:cov
 
 ### 🧪 Testes Automatizados
 
-- [ ] Testes **unitários** com Jest
+- [x] Testes **unitários** com Jest
 - [ ] Testes **de integração** da API
-- [ ] Uso de **mocks e stubs** para isolar dependências
+- [x] Uso de **mocks e stubs** para isolar dependências
 
 ---
 
